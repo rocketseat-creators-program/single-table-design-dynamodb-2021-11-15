@@ -1,0 +1,33 @@
+{
+  "name": "dynamodb-example",
+  "version": "0.0.1",
+  "description": "Example DynamoDB queries made using Node.js",
+  "main": "dynamodb.js",
+  "scripts": {
+    "start": "",
+    "dev": "",
+    "lint": "eslint ./src --ext .json --ext .js --fix"
+  },
+  "keywords": [
+    "node",
+    "serverless",
+    "dynamodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.796.0",
+    "aws-xray-sdk-core": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-watch": "^3.1.4",
+    "husky": "^1.3.1"
+  }
+}
