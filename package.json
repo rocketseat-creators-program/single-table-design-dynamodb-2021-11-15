@@ -16,8 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.796.0",
-    "aws-xray-sdk-core": "^3.3.3"
+    "aws-sdk": "^2.796.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
