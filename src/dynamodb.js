@@ -13,16 +13,16 @@ const createTicket = () => {
 const getUser = () => {
 }
 
-const getUserWithTickets = () => {
+const getUseTickets = () => {
 }
 
-const getTickets = () => {
+const getTicket = () => {
 }
 
 module.exports = {
   createUser,
   createTicket,
   getUser,
-  getUserWithTickets,
-  getTickets,
+  getUserTickets,
+  getTicket,
 }
