@@ -13,10 +13,10 @@ const createTicket = () => {
 const getUser = () => {
 }
 
-const getUseTickets = () => {
+const getUserTickets = () => {
 }
 
-const getTicket = () => {
+const getUserAndTickets = () => {
 }
 
 module.exports = {
@@ -24,5 +24,5 @@ module.exports = {
   createTicket,
   getUser,
   getUserTickets,
-  getTicket,
+  getUserAndTickets,
 }
