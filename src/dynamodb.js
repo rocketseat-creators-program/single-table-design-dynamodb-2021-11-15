@@ -4,7 +4,7 @@ AWS.config.loadFromPath('./config.json')
 
 const documentClient = new AWS.DynamoDB.DocumentClient()
 
-const tableName = 'ticket-application'
+const tableName = 'support-application-table'
 
 const createUser = (username, name, email, address) => {
   const params = {
@@ -17,11 +17,10 @@ const createUser = (username, name, email, address) => {
       address,
     },
   }
-
-  return documentClient.put(params).promise(console.log)
+  return documentClient.put(params).promise().then(console.log)
 }
 
-const createTicket = (username, title, body, status) => {
+const createTicket = (username, title, body) => {
   const params = {
     TableName: tableName,
     Item: {
@@ -29,19 +28,20 @@ const createTicket = (username, title, body, status) => {
       sk: `TICKET#${Math.floor(new Date().getTime() / 1000)}`,
       title,
       body,
-      status,
+      status: 1,
     },
   }
-
-  return documentClient.put(params).promise(console.log)
+  return documentClient.put(params).promise().then(console.log)
 }
 
 const getUser = username => {
   const params = {
     TableName: tableName,
-    Key: { pk: `USER#${username}`, sk: `PROFILE#${username}` },
+    Key: {
+      pk: `USER#${username}`,
+      sk: `PROFILE#${username}`,
+    },
   }
-
   return documentClient.get(params).promise().then(console.log)
 }
 
@@ -54,7 +54,6 @@ const getUserTickets = username => {
       ':sk': 'TICKET#',
     },
   }
-
   return documentClient.query(params).promise().then(console.log)
 }
 
@@ -67,7 +66,6 @@ const getUserAndTickets = username => {
       ':pk': `USER#${username}`,
     },
   }
-
   return documentClient.query(params).promise().then(console.log)
 }
 
